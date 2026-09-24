@@ -1,0 +1,49 @@
+:root{
+  --bg:#f7f7f5; --card:#ffffff; --text:#1a1a1a; --muted:#6b6b6b;
+  --accent:#b5651d; --accent2:#2d5a3d; --border:#e3e1dc;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1a1a18; --card:#242422; --text:#ececea; --muted:#9a9a95;
+    --accent:#e0985a; --accent2:#6fae86; --border:#3a3a36;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  padding:32px 16px 40px;
+}
+.wrap{max-width:680px;margin:0 auto}
+h1{font-size:20px;margin:0 0 4px;font-weight:600}
+.sub{color:var(--muted);font-size:13px;margin:0 0 24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:16px}
+.spacer{height:12px}
+label.dropzone{
+  display:block;border:1.5px dashed var(--border);border-radius:8px;
+  padding:28px 14px;text-align:center;cursor:pointer;color:var(--muted);
+  font-size:13px;transition:border-color .15s;
+}
+label.dropzone:hover{border-color:var(--accent)}
+input[type=file]{display:none}
+textarea{
+  width:100%;min-height:120px;background:transparent;color:var(--text);
+  border:1px solid var(--border);border-radius:8px;padding:10px;
+  font-family:inherit;font-size:12px;resize:vertical;
+}
+button{
+  background:var(--accent);color:#fff;border:none;border-radius:8px;
+  padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;width:100%;
+  font-family:inherit;
+}
+button:disabled{opacity:.5;cursor:default}
+.filename{font-size:12px;color:var(--accent2);margin-top:8px}
+.seg-table{width:100%;border-collapse:collapse;font-size:12px;display:block;overflow-x:auto}
+.seg-table td{padding:5px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+.seg-id{color:var(--accent);font-weight:600;width:50px}
+.seg-meaning{color:var(--muted)}
+.summary{white-space:pre-wrap;font-size:13.5px;line-height:1.6}
+.sectitle{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 10px;font-weight:600}
+.loading{color:var(--muted);font-size:13px}
+.hidden{display:none}
+.errbox{color:#c14545;font-size:13px}

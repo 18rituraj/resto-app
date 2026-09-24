@@ -1,13 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flavoro - Explore Taste</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EDI 210 Summarizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>EDI 210 Summarizer</h1>
+  <p class="sub">Upload a raw X12 210 (freight invoice) file, or paste the text below.</p>
+
+  <div class="card">
+    <label class="dropzone" for="fileInput">Click to upload an .edi / .txt file<br><span id="fname" class="filename"></span></label>
+    <input type="file" id="fileInput" accept=".edi,.txt,text/plain">
+    <div class="spacer"></div>
+    <textarea id="pasteArea" placeholder="...or paste raw EDI text here"></textarea>
+    <div class="spacer"></div>
+    <button id="parseBtn">Parse &amp; Summarize</button>
+  </div>
+
+  <div id="resultsCard" class="card hidden">
+    <p class="sectitle">Parsed Segments</p>
+    <table class="seg-table" id="segTable"></table>
+  </div>
+
+  <div id="summaryCard" class="card hidden">
+    <p class="sectitle">AI Summary</p>
+    <div id="summaryBody" class="summary"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
 </html>
